@@ -1,0 +1,55 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+.header{
+/*    margin的顺序为上右下左*/
+    margin: 25px auto 0 50px;
+}
+/*no dispaly*/
+.header .menu ul{
+    display: none;
+    list-style: none;
+}
+
+.header .logo{
+    float: left;
+    position: relative;
+}
+.header .menu{
+    float: left;
+    position: relative;
+    margin-top: 12px;
+    margin-left: 16px;
+}
+
+/*实现菜单的折叠*/
+/*.header .menu:hover ul{*/
+/*    display: block;*/
+/*}*/
+.header .menu ul li{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.header .menu .menu_title{
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+    width: 80px;
+    text-align: center;
+}
+a{
+    text-decoration: none;
+}
+.header .auth{
+    float: right;
+}
+
+.header .auth ul li{
+    float: left;
+    margin-right: 70px;
+    margin-top: 12px;
+    list-style: none;
+
+}
