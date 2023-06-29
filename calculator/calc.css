@@ -1,0 +1,33 @@
+*{
+	/*先把所有的间距都调整为0*/
+	margin: 0px;
+	padding: 0px;
+}
+div{
+	width: 170px;
+}
+#div1{
+	top:60px;
+	left: 100px;
+	/*position: absolute;*/
+	position: absolute;
+}
+input[type="button"]{
+	width: 30px;
+	margin-right: 5px;
+}
+input[type="text"]{
+	width: 149px;
+	text-align: right;
+	background-color: #fff;
+	border: 1px solid;
+	padding-right: 5px;
+	/*已存在的空间来增加边距*/
+	box-sizing: border-box;
+}
+/*hover浮动的意思,黄色细线*/
+input[type="button"]:hover{
+	background-color: yellow;
+	border: 1px solid;
+}
+
