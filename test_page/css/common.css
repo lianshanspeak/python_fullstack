@@ -68,3 +68,17 @@ a{
 /*    上间距*/
     margin-top: 20px;
 }
+
+.content .img-content ul{
+    width: 1280px;
+}
+
+.content .img-content ul li{
+    width: 360px;
+    /*浮动方式*/
+    float: left;
+    /*间距*/
+    margin: 0 60px 60px 0;
+    /*去掉小点*/
+    list-style: none;
+}
