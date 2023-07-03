@@ -5,12 +5,18 @@
 
 .header{
 /*    margin的顺序为上右下左*/
-    margin: 25px auto 0 50px;
+/*    margin: 25px auto 0 80px;*/
+    margin: 25px auto;
+    width: 1200px;
 }
 /*no dispaly*/
 .header .menu ul{
     display: none;
     list-style: none;
+    position: absolute;
+    width: 80px;
+    opacity: 0.5;
+    background-color: white;
 }
 
 .header .logo{
@@ -48,8 +54,17 @@ a{
 
 .header .auth ul li{
     float: left;
-    margin-right: 70px;
-    margin-top: 12px;
+    margin-right: 50px;
     list-style: none;
 
+}
+
+.content{
+    width: 1200px;
+    margin: 25px auto;
+}
+
+.content .banner .banner-img{
+/*    上间距*/
+    margin-top: 20px;
 }
