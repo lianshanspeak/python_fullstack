@@ -1,0 +1,6 @@
+1.要通过计算方式获取互相位置的对应关系
+2.ul,li使用频率非常高，适用于规律性显示
+3.理解overflow:hidden,height,float之间的关系
+4.实现水平居中，和垂直居中的方法
+水平居中：margin:25px auto;
+垂直居中：line-height:60px;height:60px

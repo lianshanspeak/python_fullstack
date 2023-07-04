@@ -81,4 +81,103 @@ a{
     margin: 0 60px 60px 0;
     /*去掉小点*/
     list-style: none;
+/*    设置边框格式*/
+    margin-top: 20px;
+    height: 400px;
+    box-shadow: 2px 2px 5px 3px #ccc;
+    -webkit-box-shadow: 2px 2px 5px 3px #ccc;/*谷歌浏览器*/
+    -moz-box-shadow: 2px 2px 5px 3px #ccc;/*火狐浏览器*/
+    background-color: #FFF;
+}
+
+/*设置标题*/
+.img-content>ul>li .info h3{
+    font-size: 25px;
+    color: red;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/*设置段落行间距*/
+.img-content>ul>li .info p{
+    line-height: 25px;
+    margin-bottom: 10px;
+}
+body{
+    background-color: #F5F5F5;
+}
+
+.info{
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.img-content>ul>li .price{
+    color: red;
+    font-size: 20px;
+}
+
+.img-content .info .img-btn{
+    width: 300px;
+}
+.img-content .info .img-btn .btn{
+    width: 60px;
+    height: 30px;
+    background-color: red;
+    text-align: center;
+    border-radius: 5px;
+    float: right;
+}
+
+.img-content .info .img-btn .cart img{
+    width: 25px;
+    height: 20px;
+    margin-top: 5px;
+}
+.img-content .info .img-btn .price{
+    float: left;
+}
+
+
+.page-nav ul li{
+    float: left;
+    margin-right: 20px;
+    list-style: none;
+}
+
+.page-nav{
+    width: 1200px;
+    /*垂直居中*/
+    height: 60px;
+    line-height: 60px;
+    /*border:1px solid black;*/
+    overflow: hidden;
+}
+.page-nav ul{
+    /*左右剧中设置*/
+    margin: auto ;
+    overflow: hidden;
+    width: 500px;
+}
+
+.first-page{
+    border-radius: 50%;
+    background-color: #c5c5c5;
+    padding: 3px 9px;
+}
+.footer {
+    width: 1200px;
+    height: 100px;
+    margin: 60px auto;
+    border-top: 1px solid #cccccc;
+    /*溢出隐藏*/
+    overflow: hidden;
+}
+.footer p{
+    text-align: center;
+    margin-top: 70px;
+}
+
+.footer p span{
+    color: #FF1493;
 }
