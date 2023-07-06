@@ -1,0 +1,12 @@
+/* 首页样式 */
+.layout {
+    background-color: #f6f6f6;
+}
+.navbar {
+    background-color: #fff;
+}
+.navbar .navbar-brand {
+    color: #0084ff;
+    font-size: 26px;
+    font-weight: bold;
+}
