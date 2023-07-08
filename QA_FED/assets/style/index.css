@@ -10,3 +10,59 @@
     font-size: 26px;
     font-weight: bold;
 }
+
+
+/* 左侧分类菜单 */
+.cls-menu-ls {
+    margin-top: 10px;
+    padding: 10px;
+}
+.cls-menu-ls a {
+    color: #1a1a1a;
+    text-decoration: none;
+    padding: 0 15px;
+}
+.cls-menu-ls a:hover,
+.cls-menu-ls a.active{
+    color: #0084ff;
+    text-decoration: none;
+}
+
+/* 问题列表 */
+.qa-ls {
+    background-color: #fff;
+}
+.qa-ls .qa-item {
+    margin-top: -1px;
+    padding: 15px;
+    border: 1px solid #f0f2f7;
+}
+.qa-ls .qa-item .title {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 0;
+    text-decoration: none;
+}
+.qa-ls .qa-item .desc {
+    display: flex;
+}
+.qa-ls .qa-item .desc .left{
+    width: 200px;
+    height: 100px;
+    margin-right: 10px;
+    overflow: hidden;
+    flex: none;
+}
+.qa-ls .qa-item .desc .left img{
+    width: 200px;
+    height: auto;
+}
+.qa-ls .qa-item .desc .right .more{
+    color: #175199;
+    font-size: 13px;
+}
+.qa-ls .qa-item .desc .right .more:hover{
+    color: #76839b;
+}
+
+/* //问题列表 */
