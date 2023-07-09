@@ -1,6 +1,7 @@
 /* 首页样式 */
 .layout {
     background-color: #f6f6f6;
+    padding-top: 70px;
 }
 .navbar {
     background-color: #fff;
@@ -60,9 +61,83 @@
 .qa-ls .qa-item .desc .right .more{
     color: #175199;
     font-size: 13px;
+    cursor: pointer;/* 鼠标手 */
 }
 .qa-ls .qa-item .desc .right .more:hover{
     color: #76839b;
 }
 
 /* //问题列表 */
+
+
+/* 问题列表底部菜单 */
+.qa-footer{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.qa-footer > div {
+    margin-right: 10px;
+}
+
+.qa-footer .txt-menu{
+    color: #8590a6;
+}
+
+
+.qa-footer .txt-menu .glyphicon{
+    margin-left: 4px;
+}
+
+.qa-footer .txt-menu .dropdown-menu{
+    transform: translateX(-45%);
+}
+ 
+/* //问题列表底部菜单 */
+
+
+/* 右侧登录菜单 */
+.right-menu-box {
+    margin-top: 10px;
+    background-color: #fff;
+    border: 1px solid #f0f2f7;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.right-menu-box .menu-item{
+    /* 2行3列 */
+    flex: 1 1 33.33%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.right-menu-box .menu-item:hover{
+    text-decoration: none;
+}
+
+.right-menu-box .menu-item i{
+    padding: 10px;
+    color: #8590a6;
+}
+.right-menu-box.menu-item span{
+    color: #444;
+}
+.right-creater-box{
+    padding: 15px;
+    margin-top: 10px;
+    background-color: #fff;
+    border: 1px solid #f0f2f7;
+}
+
+.right-creater-box a{
+    display: flex;
+    justify-content: space-between;
+}
+.right-creater-box a:hover{
+    text-decoration: none;
+}
+
+/* //右侧登录菜单 */
