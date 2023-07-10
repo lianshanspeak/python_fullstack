@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Hello React!</title>
+<!-- react核心库 -->
+<script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+<!-- 引入react-DOM,支持react操作DOM -->
+<script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+<!-- 引入babel,用于将jsx转换js -->
+<script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+    <!-- 准备一个容器 -->
+<div id="test"></div>
+<script type="text/babel">
+    // <!-- 创建虚拟DOM -->
+    // const VDOM = <h1 id='test'>Hello React</h1>
+    // 可以看出优势，简化创建虚拟DOM
+    // const VDOM = <h1 id='test'><span >Hello,react</span></h1>
+    // 优化结构
+    const VDOM = (
+        <h1>
+            <span>hello,world</span>    
+        </h1>
+    )
+    // <!-- 渲染虚拟DOM -->
+    ReactDOM.render(VDOM,document.getElementById('test'))
+
+</script>
+
+</body>
+</html>
