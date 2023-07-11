@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>jsx小练习!</title>
+    <!-- 准备好一个容器 -->
+    <div id="test"></div>
+<!-- react核心库 -->
+<script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+<!-- 引入react-DOM,支持react操作DOM -->
+<script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+<!-- 引入babel,用于将jsx转换js -->
+<script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+<!-- 1、区分js语句和js表达式
+    表达式：一个表达式产生一个值，可以放在任何一个需要值的地方，以下都是表达式
+        1、a 2. a+b 3.demo(1)【函数调用表达式】4、arr.map()【加工数组】5、function test() {}
+        
+    语句或者代码
+        1.if(){} 2.for(){} 3.switch(){case:XXX}
+ -->
+
+        
+
+<script type="text/babel">
+    // <!-- 模拟一些数据 -->
+    const data = ['Angular','React','Vue']
+    // const data2 = [<li>Angular</li>,<li>React</li>,<li>Vue</li>]
+    // const data3 = {name1:'Angular',name2:'React',name3:'Vue'}
+    // 1、创建虚拟DOM
+    const VDOM = (
+        <div >
+            <h1>前端JS框架列表</h1>
+            <ul>
+                {
+                    // 遍历的时候每一个列表必须有key的值，不然后台会报错
+                    data.map((item,index)=>{
+                        return <li key={index}>{item}</li>
+                    })
+                }
+            </ul>    
+        </div>
+    )
+    // 2、渲染虚拟DOM到页面
+    ReactDOM.render(VDOM,document.getElementById('test'))
+
+</script>
+
+</body>
+</html>
+
+
