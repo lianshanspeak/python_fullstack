@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>jsx小练习!</title>
+    <!-- 准备好一个容器 -->
+    <div id="test"></div>
+<!-- react核心库 -->
+<script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+<!-- 引入react-DOM,支持react操作DOM -->
+<script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+<!-- 引入babel,用于将jsx转换js -->
+<script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+
+
+<script type="text/babel">
+    // 创建函数式组件
+    function Demo() {
+        // 因为babel编译后，开启了严格模式,this返回结果是undefined
+        // console.log(this)
+        return <h1>我是用函数定义的组件（适用于【简单组件】的定义）</h1>
+    }
+    // 渲染组件到页面,写标签，标签需要自结束，<Demo/>组件标签
+    ReactDOM.render(<Demo/>,document.getElementById('test'))
+    // 执行了ReactDOM.render之后发生了什么
+        // 1.react解析标签组件，找到Demo组件；
+        // 2.发现组件是函数式定义，随后调用该函数，将返回的虚拟DOM转换为真实DOM，呈现在页面中
+</script>
+
+</body>
+</html>
+
+

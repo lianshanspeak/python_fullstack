@@ -16,23 +16,7 @@
 
         
 <script type="text/babel">
-    // 创建数据
-    const data = ['Angilar','React','Vue']
-    // 创建虚拟DOM
-    
-    const VDOM = (
-        <div>
-            <h1>前端JS框架列表</h1>
-            <ul>{
-            data.map((item,index)=>{
-                return <li key={index}>{item}</li>
-        })}
-            </ul>     
-        </div>
 
-    )
-    // 将虚拟DOM渲染出来
-    ReactDOM.render(VDOM,document.getElementById('test'))
 
 </script>
 
