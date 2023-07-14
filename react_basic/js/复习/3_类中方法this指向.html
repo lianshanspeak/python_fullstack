@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>jsx小练习!</title>
+
+</head>
+<body>
+    <script type="text/javascript">
+        // class Person{
+        //     constructor(name,age){
+        //         this.name = name
+        //         this.age = age
+        //     }
+        //     study(){
+        //         // 通过Person实例调用study方法时，study中的this就是Person的实例
+        //         console.log(this);
+        //     }
+        // }
+        
+        // const p1 = new Person('Tom',18)
+        // p1.study()//通过实例调用study方法
+        // const x = p1.study
+        // x()
+        function demo(){
+            'use strict'//开启严格模式，之后后面调用demo()就是undefine
+            console.log(this);
+        }        
+        function demo2(){
+            'use strict'//开启严格模式，之后后面调用demo()就是undefine
+            console.log(this);
+        }
+        demo()
+        demo2()
+
+    </script>
+
+</body>
+</html>
+
+
