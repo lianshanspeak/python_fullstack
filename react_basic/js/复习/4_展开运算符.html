@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>jsx小练习!</title>
+    <!-- 准备好一个容器 -->
+    <div id="test"></div>
+<!-- react核心库 -->
+<script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+<!-- 引入react-DOM,支持react操作DOM -->
+<script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+<!-- 引入babel,用于将jsx转换js -->
+<script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+
+        
+<script type="text/babel">
+    let arr1 = [1,3,5,7,9]
+    let arr2 = [2,4,6,8,10]
+    console.log(...arr1)//展开数组
+    let arr3 = [...arr1,...arr2]
+    console.log(arr3)//合并数组
+
+    // 在函数中使用
+    function sum(...number){
+        return number.reduce((preValue,currentValue) => {
+            return preValue + currentValue
+        })
+    }
+    console.log(sum(1,2,3))
+
+    // 构造字面量对象时使用展开语法
+    let Person = {name:'tom',age:18}
+    let Person2 = {...Person}
+   // console.log(...Person);//报错。展开运算符不能展开对象
+    Person.name = 'jerry'
+    console.log(Person2);
+    console.log(Person)
+
+    // 合并
+    let Person3 = {...Person,name:"jack",address:"地球"}
+    console.log(Person3)
+</script>
+
+</body>
+</html>
+
+

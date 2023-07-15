@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>jsx小练习!</title>
+    <!-- 准备好一个容器 -->
+    <div id="test1"></div>
+    <div id="test2"></div>
+<!-- react核心库 -->
+<script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+<!-- 引入react-DOM,支持react操作DOM -->
+<script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+<!-- 引入babel,用于将jsx转换js -->
+<script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+<!-- 引入props模块对数据进行限制 -->
+<script src="https://cdn.bootcss.com/prop-types/15.6.1/prop-types.js"></script>
+
+</head>
+<body>
+
+        
+<script type="text/babel">
+    // 创建组件
+    // class Person extends React.Component{
+    //     // 对标签属性类型进行限制
+    //     propTypes = {
+    //         name:PropTypes.string.isRequired,//字符型，必须要有
+    //         sex:PropTypes.string,//字符型
+    //         age:PropTypes.number,//数字
+    //         speak:PropTypes.func,//必须为函数
+    //     }
+    //     // 指定默认标签属性值
+    //     defaultProps = {
+    //         sex:'男',//默认为男
+    //         age:18,//默认为18
+    //     }
+    //     render(){
+    //         const {name,age,sex} = this.props
+    //         // props值是只读的！！！！
+    //         //this.props.name = 'ken' //代码报错
+    //         return (
+    //             <ul>
+    //                 <li>姓名：{name}</li>    
+    //                 <li>性别：{sex}</li>    
+    //                 <li>年龄：{age+1}</li>    
+    //             </ul>
+    //         )
+    //     }
+    // }
+
+    // 函数式
+    function Person(props){
+        const {name,age,sex} =props
+        return(
+            <ul>
+                <li>姓名：{name}</li>    
+                <li>性别：{sex}</li>    
+                <li>年龄：{age+1}</li>    
+             </ul>
+        )
+    }
+        // 对标签属性类型进行限制
+    Person.propTypes = {
+        name:PropTypes.string.isRequired,//字符型，必须要有
+        sex:PropTypes.string,//字符型
+        age:PropTypes.number,//数字
+        speak:PropTypes.func,//必须为函数
+        }
+        // 指定默认标签属性值
+    Person.defaultProps = {
+        sex:'男',//默认为男
+        age:18,//默认为18
+        }
+
+    // 渲染组件到页面
+    ReactDOM.render(<Person name="ken" sex="男" age={23}/>,document.getElementById('test1'))
+
+</script>
+
+</body>
+</html>
+
+

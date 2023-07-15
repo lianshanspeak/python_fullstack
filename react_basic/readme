@@ -64,3 +64,21 @@ json中，    parse：解析成为js中的对象
 
 组件实例的三大核心属性之一：state
 状态
+state是一个对象{},组将被称为状态机，维护状态，通过更新组件状态来更新对应页面显示（重新渲染组件）
+1）组件中render方法的this为组件实例对象
+2）组件自定义方法中this为undefine,如何解决
+a.强制绑定this通过函数对象的bind()
+b.箭头函数
+3.状态数据不能直接修改，必须通过setState
+
+constructor的使用范围
+1、通过给this.state赋值对象类初始化内部state
+2、为函数事件处理绑定实例（bind）
+
+<!-- 可传可不传的情况下,要使用this就需要传，不然会被认为undefine -->
+<!-- 希不希望在构造器中通过this访问props -->
+<!-- 一般不写 -->
+constructor(props){
+    super(props)
+    console.log('constructor',this.props)
+}
