@@ -82,3 +82,27 @@ constructor(props){
     super(props)
     console.log('constructor',this.props)
 }
+
+
+<!-- 回调函数，回调回调别人在调 -->
+1.你没调用
+2.你定义的函数
+3.函数之后执行了
+()=>{}匿名函数
+
+(a)=>{console.log(a)}
+
+如何理解下面
+ref={(a)=>{this.input1 = a}}
+(a),：当前所处的节点
+this.input = a,把a放在组件实例自身上，然后取了名字叫input1
+这里的this是谁呢，这里是箭头函数，没有自己的this,往外找，找谁呢,就是render，就是组件的实例对象
+
+
+什么叫内联函数
+标签里面的函数，
+
+ref回调使用问题，在更新过程中，会被执行两次，第一是null，第二次才是需要的
+参考案例
+03_ref回调次数的问题
+
