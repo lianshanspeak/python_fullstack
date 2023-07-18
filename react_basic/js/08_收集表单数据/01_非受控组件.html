@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>jsx小练习!</title>
+    <!-- 准备好一个容器 -->
+    <div id="test"></div>
+<!-- react核心库 -->
+<script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+<!-- 引入react-DOM,支持react操作DOM -->
+<script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+<!-- 引入babel,用于将jsx转换js -->
+<script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+
+        
+<script type="text/babel">
+    // 创建组件
+    class Login extends React.Component{
+        handleSubmit = (event) =>{
+            event.preventDefault()//阻止提交
+            const {username,password} = this
+            alert(`你输入的用户名是${username.value},密码是${password.value}`)
+        }
+        render(){
+            return (
+            <form onSubmit={this.handleSubmit}>
+                用户名：<input ref={c => this.username = c} type="text" name="username" />
+                密码：<input ref={c => this.password = c} type="password" name="password"/>
+                <button>提交</button>
+            </form>
+            )
+        }
+    }
+    // 渲染组件
+    ReactDOM.render(<Login/>,document.getElementById('test'))
+
+</script>
+
+</body>
+</html>
+
+
