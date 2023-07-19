@@ -121,3 +121,11 @@ ref回调使用问题，在更新过程中，会被执行两次，第一是null�
 常见的高阶函数
 Promise，数组上常见的方法
 函数柯里化：通过函数调用继续返回函数的方式，实现多次接收参数最后统一处理的函数编码形式
+
+
+
+组件的生命周期！！非常重要
+
+clearInterval() 方法可以取消该周期性的方法调用
+
+componentDidmount和componentWIllUnmout

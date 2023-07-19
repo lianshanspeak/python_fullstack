@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>函数的生命周期!</title>
+    <!-- 准备好一个容器 -->
+    <div id="test"></div>
+<!-- react核心库 -->
+<script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+<!-- 引入react-DOM,支持react操作DOM -->
+<script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+<!-- 引入babel,用于将jsx转换js -->
+<script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+
+        
+<script type="text/babel">
+    class Life extends React.Component{
+        state = {opacity:1}
+
+        death = () => {
+            // 清除定时器
+            clearInterval(this.timer)
+            // 卸载组件
+            ReactDOM.unmountComponentAtNode(document.getElementById('test'))
+        }
+
+        // 组件挂载完毕
+        componentDidMount(){
+            this.timer = setInterval( () => {
+                // 获取原状态
+                let {opacity} = this.state
+                // 减小0.1
+                opacity -= 0.1
+                // 如果小于等一0了，马上赋值变成1
+                if( opacity <= 0 ) opacity = 1
+                // 设置为新的透明度
+                this.setState({opacity})},200);
+            }
+
+
+        // 组件将要卸载
+        // componentWillUnmount(){
+        //     // 清除定时器
+        //     clearInterval(thi.timer)
+        // }
+        render(){
+            console.log("render")
+            return(
+                <div>
+                    <h1 style={{opacity:this.state.opacity}}>React学不会</h1>    
+                    <button onClick={this.death}>消失</button>    
+                </div>
+            )
+        }
+    }
+
+    // 函数渲染
+    ReactDOM.render(<Life/>,document.getElementById('test'))
+
+</script>
+
+</body>
+</html>
+
+
