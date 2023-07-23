@@ -31,11 +31,41 @@
             console.log('Count-componentWillMount')
         }
 
+        // 卸载组件按钮的回调
+        death = () => {
+            ReactDOM.unmountComponentAtNode(document.getElementById('test'))
+        }
+        // 强制更新按钮的回调
+        force = () => {
+            this.forceUpdate()
+        }
+
         // 组件挂载完毕的钩子
         componentDidMount(){
             console.log('Count-componentDidMount')
         }
+        // 组件将要卸载的钩子
+        componentWillMount(){
+            console.log('Count--componentWillMount')
+        }
 
+        //控制组件更新的阀门，默认值为true
+        shouldComponentUpdate(){
+            console.log('Count--shouldComponentUpdate')
+            return true
+        }
+
+
+        // 组件将要更新的钩子
+        componentWilleUpdate(){
+            console.log('Count--componentWillUpdate')
+        }
+
+
+        // 组件更见完毕的钩子，什么什么钩子，什么时候去调
+        componentDidUpdate(){
+            console.log('Count--componentDidUpdate')
+        }
 
         // 初始化状态
         // state = {count:0}
@@ -53,13 +83,49 @@
             return(
                 <div>
                     <h1 >当前求和为{count}</h1>
-                    <button onClick={this.add}>点我+1</button>    
+                    <button onClick={this.add}>点我+1</button> 
+                    <button onClick={this.death}>卸载组件</button>   
+                    <button onClick={this.force}>不更改状态中的数据，强制更新一下</button>
                 </div>
             )
         }
     }
+    // 父组件A
+    class A extends React.Component{
+        // 初始化状态
+        state = {carName:'奔驰'}
+
+        changeCar = () => {
+            this.setState({carName:'奥迪'})
+        }
+        render(){
+            return(
+                <div>
+                    <div>A</div>
+                    <button onClick={this.changeCar}>换车</button>
+                    <B carName={this.state.carName}/>    
+                </div>
+            )
+        }
+    }
+    // 子组件B
+    class B extends React.Component{
+        // 只要B组件挂载了，就会调用
+        componentDidMount(){
+            console.log('B--主要B挂载了就会调用')
+        }
+        // 这个新的不算，之后传的才会算，第一次不算
+        componentWillReceiveProps(){
+                console.log('B--componentWillReceiveProps');
+        }
+        render(){
+            return(
+                <div>我是B，接收到的信息是:{this.props.carName}</div>
+            )
+        }
+    }
     // 渲染组件
-    ReactDOM.render(<Count/>,document.getElementById('test'))
+    ReactDOM.render(<A/>,document.getElementById('test'))
 
 </script>
 

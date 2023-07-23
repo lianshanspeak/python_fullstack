@@ -129,3 +129,28 @@ Promise，数组上常见的方法
 clearInterval() 方法可以取消该周期性的方法调用
 
 componentDidmount和componentWIllUnmout
+
+
+shouldComponentUpdate，应不应该更新状态，true更新，相当于阀门的开放关闭，默认为真,每次更新的时候会问它
+
+
+forceUpdate()强制更新，就是不用走阀门，，不走shouldComponentUpdate这个路径
+
+父组件，子组件
+
+class A extends React.Component{
+    render(){
+        return(
+            <div>
+                <B/>
+            </div>
+        )
+    }
+}
+
+class B extends React.Component{
+    ......
+}
+
+componentDidMount()常用，用于初始化，开启定时器，发送网络请求，订阅消息
+componentWillUnmount()，常用于收尾工作，关闭定时器，取消订阅消息
