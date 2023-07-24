@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>jsx小练习!</title>
+    <!-- 准备好一个容器 -->
+    <div id="test"></div>
+<!-- react核心库 -->
+<script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+<!-- 引入react-DOM,支持react操作DOM -->
+<script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+<!-- 引入babel,用于将jsx转换js -->
+<script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+
+        
+<script type="text/babel">
+
+    class Person extends React.Component{
+        state = {
+            persons:[
+                {id:1,name:'小张',age:18},
+                {id:2,name:'小李',age:19}
+            ]
+        }
+
+        add = () => {
+            const {persons} = this.state
+            const p = {id:persons.length+1,name:'小王',age:20}
+            this.setState({persons:[p,...persons]})
+        }
+
+
+        render(){
+            return(
+                <div>
+                    <h2>展示人员信息</h2>
+                    <button onClick={this.add}>添加一个小王</button>
+                    <h3>使用index(索引值)作为key</h3>
+                    <ul>
+                        {
+                            this.state.persons.map((personObj,index) => {
+                                return <li key={index}>{personObj.name}----{personObj.age}</li>                                
+                            })
+                        }
+                    </ul>                       
+                    <hr/>
+                    <hr/>
+                    <h3>使用id(数据的唯一标识)作为key,效率高啊</h3>
+                    <ul>
+                        {
+                            this.state.persons.map((personObj) => {
+                                return <li key={personObj.id}>{personObj.name}----{personObj.age}</li>                                
+                            })
+                        }
+                    </ul>    
+                </div>
+            )
+        }
+    }
+
+    ReactDOM.render(<Person/>,document.getElementById('test'))
+
+</script>
+
+</body>
+</html>
+
+

@@ -154,3 +154,32 @@ class B extends React.Component{
 
 componentDidMount()常用，用于初始化，开启定时器，发送网络请求，订阅消息
 componentWillUnmount()，常用于收尾工作，关闭定时器，取消订阅消息
+
+
+cdn下载信息
+https://www.bootcdn.cn/
+
+diffing算法，最小是标签，会一直遍历
+
+
+经典面试题
+
+1.react/vue中key有什么作用（key内部原理）
+2，为什么遍历列表时，key最好不要用index
+虚拟DOM中key的作用
+1)简单说：key是虚拟对象的标识，在更新显示时key起重要作用
+2）详细说
+    1、状态发生变化时，react会根据【新数据】生成【新的虚拟DOM】,随后React进行【新虚拟DOM】与【旧虚拟DOM】的diff比较
+        a、旧虚拟DOM找到了与新虚拟DOM相同的key:1.虚拟DOM中内容没变，直接用之前的正式DON，2虚拟DOM中内容变了，则新新的真实DOM替换之前真实的
+        b.旧虚拟DOM中未找到，新虚拟DOM中相同的key,根据数据创建新的真实DOM，渲染到页面
+
+    2、用index作为key可能引发的问题
+        a.若对数据进行：！！！！逆序添加，逆序删除等破坏顺序操作，
+            会产生没有必要的真实DOM更新==>界面效果没有问题，但效率低
+        b.如果结构中还包含输入类DOM,
+            会产生错误DOM更新 ==》界面问题
+        c.注意，如果不存在a,只用作渲染展示，则使用index作为key只是效率问题
+
+    3.开发中如何选择key，
+        1.最好使用每条数据的唯一标识作为key,比如id，手机号，身份正，学号等唯一值
+        2.如果确定只是简单展示数据，用index展示也可以
