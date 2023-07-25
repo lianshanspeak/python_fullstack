@@ -183,3 +183,22 @@ diffing算法，最小是标签，会一直遍历
     3.开发中如何选择key，
         1.最好使用每条数据的唯一标识作为key,比如id，手机号，身份正，学号等唯一值
         2.如果确定只是简单展示数据，用index展示也可以
+
+
+
+什么XX脚手架 用来帮助程序员快速创建XXX库的模板
+1、包含了所需要的配置
+2.下载好了相关的依赖
+3.直接运行简单的效果
+
+项目特点：模块化、组件化、工程化
+
+react提供了一个用于创建react项目的脚手架create-react-app
+
+脚手架安装
+1、npm i create-react-app -g
+2、切换到想要创项目目录 执行命令：
+create-react-app react_staging
+3、常用命令
+yarn start 启动项目或者npm start
+yarn eject 配置文件
