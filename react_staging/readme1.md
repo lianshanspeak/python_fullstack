@@ -34,3 +34,22 @@ rfc:快速创建function，函数式组件
 
 
 组件的组合使用-ToList
+
+
+传统html转化为jsx注意事项
+class 需要改为className
+style="" 改为 style={{}}形式
+例如style="dispaly:none"需要修改为style={{dispaly:'none'}}，none需要加上‘’，不然会找相关变量了
+
+样式的拆分
+先拆结构，在拆样式
+
+
+开头引入包原则：第三方的包，上靠，自己的下靠，样式最后
+
+
+checkbox里面，defaultChecked默认值，后面还可以改的
+
+
+子组件给父组件传递数据
+流程：父给子传递一个函数，子要传递数据得时候，调用以下函数
